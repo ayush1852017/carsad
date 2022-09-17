@@ -80,6 +80,9 @@ form > div > input {
   display: flex;
   gap: 10px;
 }
+.routes {
+  display: flex;
+}
 .wishBtn {
   margin: 0.5rem 1rem;
 }
@@ -137,6 +140,7 @@ form > div > input {
   padding: 5px;
   margin-left: 10px;
 }
+
 @media screen and (max-width: 768px) and (min-width: 468px) {
   #container {
     display: grid;
