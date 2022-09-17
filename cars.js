@@ -1,23 +1,44 @@
 let page = 1;
 let container = document.getElementById("container");
 async function getData() {
-  let sort = document.getElementById("sort").value;
   let res = await fetch(
-    `https://caradapi.herokuapp.com/api/cars?page=${page}&limit=12&orderBy=${sort}`
+    `https://caradapi.herokuapp.com/api/cars?page=${page}&limit=12`
   );
   let d = await res.json();
 
   console.log(d);
   showData(d);
+  return d;
 }
 getData();
+
 async function sortingPrice() {
   container.innerHTML = "";
+  let sortPrice = document.getElementById("sortPrice").value;
   let data = await getData();
+  if (sortPrice == "asc") {
+    data.sort((a, b) => {
+      return +a.price - +b.price;
+    });
+  } else {
+    data.sort((a, b) => {
+      return +b.price - +a.price;
+    });
+  }
 }
 async function sortingKm() {
   container.innerHTML = "";
+  let sortKm = document.getElementById("sortKm").value;
   let data = await getData();
+  if (sortKm == "asc") {
+    data.sort((a, b) => {
+      return +a.kms - +b.kms;
+    });
+  } else {
+    data.sort((a, b) => {
+      return +b.kms - +a.kms;
+    });
+  }
 }
 function inc() {
   page = page + 1;
@@ -37,9 +58,9 @@ async function filter() {
   var selected = document.getElementById("filter").value;
   var data = await getData();
   var newdata = data.filter(function (elem) {
-    return elem.category == selected;
+    return elem.brand == selected;
   });
-  console.log(newdata);
+  console.log(selected);
   container.innerHTML = "";
   showData(newdata);
 }
@@ -78,6 +99,10 @@ function showData(data) {
     brand.className = "card-brand";
     brand.innerText = e.brand;
 
+    let km = document.createElement("h3");
+    km.className = "card-km";
+    km.innerText = e.kms;
+
     let edit = document.createElement("img");
     edit.className = "card-wish";
     edit.addEventListener("click", editAd(e));
@@ -86,11 +111,14 @@ function showData(data) {
 
     let deleteItem = document.createElement("img");
     deleteItem.className = "card-wish";
-    deleteItem.addEventListener("click", deleteAd(e));
+    deleteItem.addEventListener("click", () => {
+      console.log(e);
+      return data.filter((i) => i == e.id);
+    });
     deleteItem.alt = "delete";
     deleteItem.src = "https://cdn-icons-png.flaticon.com/512/6861/6861362.png";
 
-    firstRow.append(brand, edit, deleteItem);
+    firstRow.append(brand, km, edit, deleteItem);
 
     let type = document.createElement("p");
     type.className = "card-type";
@@ -109,37 +137,36 @@ function showData(data) {
 
     let wish = document.createElement("img");
     wish.className = "card-wish";
-    wish.addEventListener("click", addWish(e));
+    wish.addEventListener("click", async () => {
+      try {
+        let add_wish = JSON.stringify(e);
+        let res = await fetch(
+          "https://caradapi.herokuapp.com/api/wishlisted_cars",
+          {
+            method: "POST",
+            body: add_wish,
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
+        let data = await res.json();
+        console.log("data:", data);
+      } catch (error) {
+        console.log("error:", error);
+      }
+    });
     wish.alt = "like";
     wish.src = "https://cdn-icons-png.flaticon.com/512/4051/4051800.png";
 
     lastRow.append(price, description, wish);
     bottom.append(firstRow, type, lastRow);
-    // -------------------------------
     card.append(top, bottom);
     container.append(card);
     j++;
   });
 }
-let addWish = async (e) => {
-  try {
-    let add_wish = JSON.stringify(e);
-    let res = await fetch(
-      "https://caradapi.herokuapp.com/api/wishlisted_cars",
-      {
-        method: "POST",
-        body: add_wish,
-        headers: {
-          "Content-type": "application/json",
-        },
-      }
-    );
-    let data = await res.json();
-    console.log("data:", data);
-  } catch (error) {
-    console.log("error:", error);
-  }
-};
+
 function editAd(e) {
   // document.getElementById("brand").value = e.brand;
   // document.getElementById("year").value = e.year;

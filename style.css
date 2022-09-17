@@ -174,7 +174,10 @@ form > div > input {
     gap: 10px;
   }
 }
-
+.card-firstRow {
+  display: flex;
+  justify-content: space-between;
+}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
