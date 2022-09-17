@@ -82,13 +82,13 @@ function showData(data) {
     edit.className = "card-wish";
     edit.addEventListener("click", editAd(e));
     edit.alt = "edit";
-    edit.src = "https://cdn-icons-png.flaticon.com/512/4051/4051800.png";
+    edit.src = "https://cdn-icons-png.flaticon.com/512/420/420140.png";
 
     let deleteItem = document.createElement("img");
     deleteItem.className = "card-wish";
     deleteItem.addEventListener("click", deleteAd(e));
     deleteItem.alt = "delete";
-    deleteItem.src = "https://cdn-icons-png.flaticon.com/512/4051/4051800.png";
+    deleteItem.src = "https://cdn-icons-png.flaticon.com/512/6861/6861362.png";
 
     firstRow.append(brand, edit, deleteItem);
 
