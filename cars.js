@@ -141,12 +141,12 @@ let addWish = async (e) => {
   }
 };
 function editAd(e) {
-  document.getElementById("brand").value = e.brand;
-  document.getElementById("year").value = e.year;
-  document.getElementById("type").value = e.type;
-  document.getElementById("km").value = e.km;
-  document.getElementById("description").value = e.description;
-  document.getElementById("price").value = e.price;
+  // document.getElementById("brand").value = e.brand;
+  // document.getElementById("year").value = e.year;
+  // document.getElementById("type").value = e.type;
+  // document.getElementById("km").value = e.km;
+  // document.getElementById("description").value = e.description;
+  // document.getElementById("price").value = e.price;
 }
 function deleteAd(data, e) {
   return data.filter((i) => e.id !== i);
