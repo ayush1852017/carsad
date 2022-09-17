@@ -141,7 +141,6 @@ let addWish = async (e) => {
   }
 };
 function editAd(e) {
-  window.location.href = "ad.html";
   document.getElementById("brand").value = e.brand;
   document.getElementById("year").value = e.year;
   document.getElementById("type").value = e.type;
