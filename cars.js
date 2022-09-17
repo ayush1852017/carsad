@@ -149,5 +149,5 @@ function editAd(e) {
   // document.getElementById("price").value = e.price;
 }
 function deleteAd(data, e) {
-  return data.filter((i) => e.id !== i);
+  // return data.filter((i) => e.id !== i);
 }
