@@ -1,0 +1,214 @@
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(184, 172, 172);
+}
+.form-container {
+  background-color: #000;
+  width: 25%;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  box-shadow: 1px 3px 8px 5px rgb(83, 9, 9);
+}
+.form-container > h1 {
+  color: #fff;
+  text-align: center;
+  margin: 1rem;
+}
+form > div {
+  width: 80%;
+  margin: 30px 40px 40px 40px;
+  background-color: #000;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+}
+form > div > label {
+  margin: 1rem 0;
+}
+form > div > select {
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+}
+form > div > input {
+  border: none;
+  background-color: #000;
+  border-bottom: 1px solid grey;
+  height: 40px;
+  color: #fff;
+}
+.formactionbutton {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#button,
+#myBtn {
+  width: 80%;
+  height: 40px;
+  font-size: 18px;
+  margin: auto;
+  color: aliceblue;
+  padding-bottom: 3px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(230, 21, 21);
+}
+#container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+  padding: 1rem;
+}
+.type {
+  color: coral;
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.functions {
+  display: flex;
+  gap: 10px;
+}
+.wishBtn {
+  margin: 0.5rem 1rem;
+}
+.wishBtn > a {
+  background-color: rgb(70, 67, 67);
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1rem;
+  width: 150px;
+  height: 30px;
+  text-decoration: none;
+}
+.functions > div > select {
+  width: 150px;
+  height: 30px;
+  font-size: 1rem;
+  background-color: tomato;
+  border: none;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+.card-image {
+  width: 100%;
+  height: 50%;
+}
+.card {
+  /* border: 1px solid red; */
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-lastRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-wish {
+  width: 30px;
+  height: 30px;
+}
+.pagination {
+  margin: 1rem;
+  text-align: center;
+}
+.pagination > button {
+  width: 150px;
+  height: 30px;
+  font-size: 1rem;
+  background-color: tomato;
+  border: none;
+  color: aliceblue;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) and (min-width: 468px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 468px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 1rem;
+  }
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wishBtn > a {
+    background-color: rgb(70, 67, 67);
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    width: 150px;
+    height: 30px;
+    text-decoration: none;
+  }
+  .functions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

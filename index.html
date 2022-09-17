@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="title">Masai Cars</h1>
+    <div class="navbar">
+      <div class="functions">
+        <div>
+          <select name="" id="sort" onchange="sortingPrice()">
+            <option value="" selected>Sort by Price</option>
+            <option value="asc" selected>Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </div>
+        <div>
+          <select name="" id="sort" onchange="sortingKm()">
+            <option value="" selected>Sort by KM</option>
+            <option value="asc" selected>Low to High</option>
+            <option value="desc">High to Low</option>
+          </select>
+        </div>
+        <div>
+          <select name="" id="filter" onchange="filter()">
+            <option value="Nexa" selected>Nexa</option>
+            <option value="women">Hyundai</option>
+            <option value="Honda">Honda</option>
+            <option value="Tata">Tata</option>
+            <option value="Toyata">Toyata</option>
+            <option value="Ford">Ford</option>
+          </select>
+        </div>
+      </div>
+      <div class="wishBtn">
+        <a href="wishlist.html">Wishlist</a>
+      </div>
+    </div>
+    <div id="container"></div>
+    <div class="pagination">
+      <button onclick="dec()">Prev</button>
+      <button onclick="inc()">Next</button>
+    </div>
+  </body>
+</html>
+<script src="cars.js"></script>

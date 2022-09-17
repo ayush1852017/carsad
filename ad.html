@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Create a Ad</h1>
+      <form>
+        <div>
+          <label for="brand">Brand of car</label>
+          <select name="brand" id="brand">
+            <option value="Hyundai">Hyundai</option>
+            <option value="Honda">Honda</option>
+            <option value="Nexa">Nexa</option>
+          </select>
+        </div>
+        <div>
+          <label for="type">Type</label>
+          <select name="type" id="type">
+            <option value="Manual">Manual</option>
+            <option value="Automated">Automated</option>
+          </select>
+        </div>
+        <div>
+          <label for="year">Year of purchase</label>
+          <select name="" id="year">
+            <option value="2020"></option>
+            <option value="">2020</option>
+            <option value="">2021</option>
+            <option value="">2022</option>
+          </select>
+        </div>
+        <div>
+          <label for="km">KM driven</label>
+          <input type="text" name="km" id="km" />
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" />
+        </div>
+        <div>
+          <label for="price">Price</label>
+          <input type="text" name="price" id="price" />
+        </div>
+        <div class="formactionbutton">
+          <input onclick="resetForm()" id="button" value="Reset" />
+        </div>
+      </form>
+      <button id="myBtn" onclick="verifyUser()">Submit</button>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          
+        
+        <h1>ENTER OTP</h1>
+        <div class="userInput">
+          <input type="text" id='first' maxlength="1" onkeyup="clickEvent(this,'second')">
+          <input type="text" id="second" maxlength="1" onkeyup="clickEvent(this,'third')">
+          <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')">
+          <input type="text" id="fourth" maxlength="1" >
+        
+        </div>
+        <button id="submit">CONFIRM</button>
+      </div>
+      
+    </div>
+  </body>
+</html>
+<script src="ad.js">
+  
+</script>
